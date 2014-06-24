@@ -1,9 +1,9 @@
-var SaveAndDelete = {
+var itemManagement = {
 
     addNewDiv: function(text) {
-		 var item =$('<li class="inputinfo"></li>').text(text);
-		 item.append('<img src = "delete.jpg"/>');
-	     $("#itemList").append(item);
+		var item =$('<li class="inputinfo"></li>').text(text);
+		item.append('<img src = "delete.jpg"/>');
+	    $("#itemList").append(item);
 
 	    $("img").on("click",function(event){
 			$(event.target).closest("li").remove();
@@ -22,10 +22,11 @@ var SaveAndDelete = {
 $(document).ready(function(){
 	var items = ['Qiu Juntao', 'Shen Tong', 'Jia Wei'];
 
-	SaveAndDelete.addPredefinedDiv(items);
+	itemManagement.addPredefinedDiv(items);
+
 	$("#addItem").click(function(){
 		 var inputinfo = $('#item').val();
-		 SaveAndDelete.addNewDiv(inputinfo);
+		 itemManagement.addNewDiv(inputinfo);
 		 $('#item').val("");
 	});
 });
