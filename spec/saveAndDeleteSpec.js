@@ -14,6 +14,7 @@ describe("saveAndDelete",function(){
         var items = ['Qun Juntao' , 'Shen Tong', 'Jia Wei'];
         SaveAndDelete.addPredefinedDiv(items);
         expect($('.inputinfo').length).toBe(3);
+        expect($('.inputinfo:eq(0)')).toHaveText("Qun Juntao");
 	});
 
 	it("should remove item", function(){
