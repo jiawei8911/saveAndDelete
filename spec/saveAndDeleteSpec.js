@@ -6,7 +6,6 @@ describe("saveAndDelete",function(){
 	});
 
 	it("should add items", function(){
-		console.log(SaveAndDelete);
 		SaveAndDelete.addNewDiv("hello");
 		expect($('.inputinfo')).toHaveText("hello");		
 	});
@@ -15,5 +14,12 @@ describe("saveAndDelete",function(){
         var items = ['Qun Juntao' , 'Shen Tong', 'Jia Wei'];
         SaveAndDelete.addPredefinedDiv(items);
         expect($('.inputinfo').length).toBe(3);
+	});
+
+	it("should remove item", function(){
+        var items = ['Qun Juntao' , 'Shen Tong', 'Jia Wei'];
+        SaveAndDelete.addPredefinedDiv(items);
+        $("img:eq(0)").click();
+        expect($('.inputinfo').length).toBe(2);
 	});
 });
